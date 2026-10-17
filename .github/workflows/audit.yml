@@ -1,0 +1,33 @@
+name: audit
+
+# The models are only worth anything if the gates still fire, so CI runs the
+# real audit: it recalculates every workbook through LibreOffice and compares
+# it against the independent Python engines.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-and-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install LibreOffice (needed to recalculate the workbooks)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libreoffice-calc
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build and audit every model type
+        run: bash tests/run_all.sh
+
+      - name: Confirm the gates still catch deliberate errors
+        run: python3 tests/test_sabotage.py

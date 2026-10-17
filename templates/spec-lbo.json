@@ -1,0 +1,176 @@
+{
+  "_comment": "Worked example for Financopedia. The company and all figures are INVENTED \u2014 replace every one, and replace every source and basis string with the real filing you took the figure from. The builder refuses to run if any source or basis is missing, and requires 7-12 years of history.",
+  "meta": {
+    "name": "Testco Industries plc",
+    "ticker": "TSTC",
+    "currency": "USD",
+    "units": "millions",
+    "fiscal_year_end": "31 December",
+    "as_of": "2026-10-17"
+  },
+  "historicals": {
+    "years": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "revenue": [
+      2150.0,
+      2365.0,
+      2580.0,
+      2790.0,
+      2510.0,
+      2980.0,
+      3320.0,
+      3610.0,
+      3940.0,
+      4280.0
+    ],
+    "ebitda": [
+      473.1,
+      536.9,
+      596.0,
+      655.6,
+      479.4,
+      727.1,
+      830.0,
+      920.6,
+      1020.5,
+      1129.9
+    ],
+    "capex": [
+      133.3,
+      153.7,
+      157.4,
+      161.8,
+      102.9,
+      175.8,
+      209.2,
+      216.6,
+      228.5,
+      256.8
+    ],
+    "nwc_balance": [
+      215.0,
+      236.5,
+      258.0,
+      279.0,
+      251.0,
+      298.0,
+      332.0,
+      361.0,
+      394.0,
+      428.0
+    ],
+    "sources": {
+      "revenue": "FY2016-FY2025 10-K filings; FY2025 filed 2026-02-14 (revenue)",
+      "ebitda": "FY2016-FY2025 10-K filings; FY2025 filed 2026-02-14 (ebitda)",
+      "capex": "FY2016-FY2025 10-K filings; FY2025 filed 2026-02-14 (capex)",
+      "nwc_balance": "FY2016-FY2025 10-K filings; FY2025 filed 2026-02-14 (nwc_balance)"
+    }
+  },
+  "inputs": {
+    "rev_growth": [
+      0.07,
+      0.062,
+      0.055,
+      0.048,
+      0.042
+    ],
+    "ebitda_margin": [
+      0.262,
+      0.264,
+      0.265,
+      0.266,
+      0.267
+    ],
+    "da_pct_rev": [
+      0.049,
+      0.049,
+      0.049,
+      0.049,
+      0.049
+    ],
+    "capex_pct_rev": [
+      0.06,
+      0.059,
+      0.058,
+      0.057,
+      0.056
+    ],
+    "nwc_pct_rev": [
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1
+    ],
+    "entry_multiple": 10.5,
+    "exit_multiple": 10.5,
+    "transaction_fees_pct": 0.02,
+    "financing_fees_pct": 0.025,
+    "rollover_equity": 150.0,
+    "tax_rate": 0.21,
+    "cash_sweep_pct": 0.75,
+    "min_cash": 150.0,
+    "opening_cash": 200.0,
+    "interest_rate_cash": 0.03,
+    "entry_step": 0.5,
+    "exit_step": 0.5,
+    "estimates": [
+      "ebitda_margin",
+      "exit_multiple",
+      "cash_sweep_pct"
+    ],
+    "basis": {
+      "rev_growth": "Management case presented in the CIM, cross-checked against the 10-year CAGR",
+      "ebitda_margin": "ESTIMATE: held near FY2025, inside the 10-year range",
+      "da_pct_rev": "10-year average",
+      "capex_pct_rev": "Y1 guided; fades to the 10-year average",
+      "nwc_pct_rev": "10-year average working capital intensity",
+      "entry_multiple": "Negotiated price per the draft SPA",
+      "exit_multiple": "ESTIMATE: held flat to entry, the conservative convention",
+      "transaction_fees_pct": "Advisory fee schedule in the engagement letter",
+      "financing_fees_pct": "OID and arrangement fees per the commitment papers",
+      "rollover_equity": "Management rollover agreed in the term sheet",
+      "tax_rate": "FY2025 effective rate per the 10-K tax footnote",
+      "cash_sweep_pct": "ESTIMATE: 75% sweep per the draft credit agreement",
+      "min_cash": "Minimum operating cash per management",
+      "opening_cash": "Cash funded to the balance sheet at close",
+      "interest_rate_cash": "Short-term deposit rate, 2026-10-16"
+    }
+  },
+  "debt_tranches": [
+    {
+      "name": "Term Loan A",
+      "turns": 2.0,
+      "rate": 0.065,
+      "amort_pct": 0.1,
+      "sweep": true,
+      "basis": "Commitment papers: 2.0x LTM EBITDA, SOFR+275, 10% annual amortisation"
+    },
+    {
+      "name": "Term Loan B",
+      "turns": 2.5,
+      "rate": 0.075,
+      "amort_pct": 0.01,
+      "sweep": true,
+      "basis": "Commitment papers: 2.5x LTM EBITDA, SOFR+375, 1% annual amortisation"
+    },
+    {
+      "name": "Mezzanine",
+      "turns": 1.0,
+      "rate": 0.11,
+      "amort_pct": 0.0,
+      "sweep": false,
+      "basis": "Mezzanine term sheet: 1.0x LTM EBITDA, 11% cash pay, bullet"
+    }
+  ]
+}

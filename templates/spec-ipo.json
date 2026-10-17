@@ -1,0 +1,166 @@
+{
+  "_comment": "Worked example for Financopedia. The company and all figures are INVENTED \u2014 replace every one, and replace every source and basis string with the real filing you took the figure from. The builder refuses to run if any source or basis is missing, and requires 7-12 years of history.",
+  "meta": {
+    "name": "Newco Holdings Ltd",
+    "ticker": "NEWC",
+    "currency": "USD",
+    "units": "millions",
+    "fiscal_year_end": "31 December",
+    "as_of": "2026-10-17"
+  },
+  "historicals": {
+    "years": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "revenue": [
+      2150.0,
+      2365.0,
+      2580.0,
+      2790.0,
+      2510.0,
+      2980.0,
+      3320.0,
+      3610.0,
+      3940.0,
+      4280.0
+    ],
+    "ebitda": [
+      473.1,
+      536.9,
+      596.0,
+      655.6,
+      479.4,
+      727.1,
+      830.0,
+      920.6,
+      1020.5,
+      1129.9
+    ],
+    "net_income": [
+      257.4,
+      294.7,
+      328.7,
+      363.2,
+      249.5,
+      406.8,
+      467.1,
+      520.6,
+      579.2,
+      644.1
+    ],
+    "sources": {
+      "revenue": "FY2016-FY2025 audited accounts in the draft prospectus, dated 2026-09-30 (revenue)",
+      "ebitda": "FY2016-FY2025 audited accounts in the draft prospectus, dated 2026-09-30 (ebitda)",
+      "net_income": "FY2016-FY2025 audited accounts in the draft prospectus, dated 2026-09-30 (net_income)"
+    }
+  },
+  "inputs": {
+    "rev_growth": [
+      0.075,
+      0.068,
+      0.06
+    ],
+    "ebitda_margin": [
+      0.262,
+      0.264,
+      0.265
+    ],
+    "net_margin": [
+      0.15,
+      0.152,
+      0.154
+    ],
+    "ipo_discount": 0.12,
+    "primary_proceeds_target": 900.0,
+    "secondary_shares": 60.0,
+    "pre_ipo_shares": 400.0,
+    "underwriting_fee_pct": 0.035,
+    "other_offering_costs": 25.0,
+    "greenshoe_pct": 0.15,
+    "net_debt": 1150.0,
+    "price_range_pct": 0.075,
+    "weight_ev_ebitda": 0.5,
+    "weight_ev_sales": 0.2,
+    "weight_pe": 0.3,
+    "multiple_step": 0.5,
+    "discount_step": 0.03,
+    "estimates": [
+      "ipo_discount",
+      "ebitda_margin",
+      "net_margin"
+    ],
+    "basis": {
+      "rev_growth": "Prospectus forecast, cross-checked against the 10-year CAGR",
+      "ebitda_margin": "ESTIMATE: held near FY2025, inside the 10-year range",
+      "net_margin": "ESTIMATE: FY2025 net margin carried forward",
+      "ipo_discount": "ESTIMATE: 10-15% is the customary IPO discount; midpoint taken",
+      "primary_proceeds_target": "Primary raise stated in the draft prospectus",
+      "secondary_shares": "Selling shareholder shares per the draft prospectus",
+      "pre_ipo_shares": "Share capital per the FY2025 audited accounts",
+      "underwriting_fee_pct": "Gross spread in the underwriting agreement",
+      "other_offering_costs": "Listing, legal and audit costs per the prospectus",
+      "greenshoe_pct": "Over-allotment option in the underwriting agreement",
+      "net_debt": "Total debt less cash, FY2025 balance sheet",
+      "price_range_pct": "Marketing range width per the bookrunners' proposal",
+      "weight_ev_ebitda": "Primary method for this sector",
+      "weight_ev_sales": "Secondary check; least weight given margin dispersion",
+      "weight_pe": "Relevant because the company is already profitable"
+    }
+  },
+  "comps": [
+    {
+      "name": "Peer One",
+      "ev_ebitda": 10.5,
+      "ev_sales": 2.6,
+      "pe": 18.0,
+      "source": "exchange data, 2026-10-16"
+    },
+    {
+      "name": "Peer Two",
+      "ev_ebitda": 12.0,
+      "ev_sales": 3.1,
+      "pe": 21.5,
+      "source": "exchange data, 2026-10-16"
+    },
+    {
+      "name": "Peer Three",
+      "ev_ebitda": 9.4,
+      "ev_sales": 2.2,
+      "pe": 16.2,
+      "source": "exchange data, 2026-10-16"
+    },
+    {
+      "name": "Peer Four",
+      "ev_ebitda": 11.2,
+      "ev_sales": 2.9,
+      "pe": 19.4,
+      "source": "exchange data, 2026-10-16"
+    }
+  ],
+  "use_of_proceeds": [
+    {
+      "purpose": "Repayment of term debt",
+      "amount": 463.9,
+      "basis": "Prospectus use of proceeds, section 4.2"
+    },
+    {
+      "purpose": "Capacity expansion",
+      "amount": 253.0,
+      "basis": "Prospectus use of proceeds, section 4.2"
+    },
+    {
+      "purpose": "General corporate purposes",
+      "amount": 126.6,
+      "basis": "Prospectus use of proceeds, section 4.2"
+    }
+  ]
+}

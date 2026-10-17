@@ -1,0 +1,20 @@
+# Build output — workbooks are generated from the specs, not committed
+*.xlsx
+!examples/*.xlsx
+*.xlsm
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# LibreOffice recalculation scratch
+.~lock.*
+financopedia_audit_*/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
