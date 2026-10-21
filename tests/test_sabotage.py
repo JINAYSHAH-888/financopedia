@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Checks that never fail prove nothing.
+"""Sabotage tests for the model gates.
 
-Each case below breaks a model in a way that produces a plausible-looking
-workbook, and asserts the audit catches it. If one of these ever passes, the
-corresponding gate has stopped working.
+Checks that never fail prove nothing. Each case below breaks a model in a way
+that produces a plausible-looking workbook, and asserts the audit catches it.
+If one of these ever passes, the corresponding gate has stopped working.
 
     python3 tests/test_sabotage.py
 """
@@ -35,7 +35,6 @@ def audit_passes(book, spec, model_type):
     return r.returncode == 0
 
 
-# (model type, description, mutation)
 CASES = [
     ("dcf", "hardcoded value in the projection",
      lambda wb: wb["PROJECTION"].__setitem__("D4", 9999.0)),

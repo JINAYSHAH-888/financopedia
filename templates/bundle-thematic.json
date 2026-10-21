@@ -1,0 +1,496 @@
+{
+  "_comment": "Worked example for Financopedia Module T. The topic is real but every figure, source and quotation here is INVENTED for demonstration \u2014 replace all of them. Citations are written as [S:key] and resolved to numbers by the builder.",
+  "meta": {
+    "title": "Grid-scale battery storage: where the published forecasts disagree",
+    "subtitle": "A review of installed-capacity projections to 2030, the assumptions behind them, and what the evidence supports",
+    "slug": "grid-storage",
+    "as_of": "2026-10-21",
+    "author": "Financopedia",
+    "coverage": "Global, with India detail"
+  },
+  "answer": "Published forecasts for 2030 global grid-scale storage span 420 GW to 1,050 GW [S:iea-2026, S:bnef-2026, S:woodmac-2025], a 2.5x range that is almost entirely one assumption: whether four-hour duration becomes the default procurement standard [S:bnef-2026]. Installed base reached 182 GW at end-2025 [S:iea-2026]. Cell prices fell to $58/kWh [S:bnef-2026], below every 2023 forecast for 2026 [S:woodmac-2025]. The binding constraint has moved from cell cost to interconnection queues, where median wait is 48 months in the US [S:ferc-2026] and 29 months in India [S:cea-2026].",
+  "key_findings": [
+    {
+      "text": "Forecasts for 2030 capacity span 2.5x; the gap is a duration assumption, not a cost or demand disagreement [S:bnef-2026, S:iea-2026].",
+      "confidence": "well-evidenced"
+    },
+    {
+      "text": "Cell prices at $58/kWh are below every 2023 projection for 2026, so cost-led forecasts have systematically under-predicted deployment [S:bnef-2026, S:woodmac-2025].",
+      "confidence": "well-evidenced"
+    },
+    {
+      "text": "Three of five published forecasts trace to one upstream dataset, so apparent corroboration overstates the independent evidence [S:bnef-2026].",
+      "confidence": "well-evidenced"
+    },
+    {
+      "text": "Interconnection queue length now binds harder than cell cost in both the US and India [S:ferc-2026, S:cea-2026].",
+      "confidence": "contested"
+    },
+    {
+      "text": "Whether 2030 revenue stacks support merchant storage without capacity payments cannot be settled from public data [S:cea-2026].",
+      "confidence": "thin"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "What is actually installed",
+      "confidence": "well-evidenced",
+      "paragraphs": [
+        "Global grid-scale storage reached 182 GW of installed capacity at end-2025, from 42 GW at end-2021 [S:iea-2026]. The compound rate over that period was 44%, and growth has not yet decelerated: 2025 additions of 61 GW were themselves 38% above 2024 [S:iea-2026]. China accounted for 47% of 2025 additions, the United States 21% and India 6% [S:iea-2026].",
+        "The India figure deserves separating because its base is small and its growth rate is the highest of the three: 11.2 GW installed at end-2025 against 1.4 GW at end-2022 [S:cea-2026]. Tendered-but-unbuilt capacity stood at a further 23 GW [S:cea-2026], so the near-term path is largely a question of execution rather than procurement."
+      ],
+      "charts": [
+        "installed-history",
+        "regional-mix"
+      ]
+    },
+    {
+      "heading": "Where the forecasts diverge",
+      "confidence": "well-evidenced",
+      "paragraphs": [
+        "The five published 2030 forecasts reviewed here span 420 GW to 1,050 GW [S:iea-2026, S:bnef-2026, S:woodmac-2025, S:irena-2026, S:ember-2026]. That spread of 2.5x [S:iea-2026, S:bnef-2026] is wide enough that the forecasts are not usefully averaged, and the cause is identifiable rather than diffuse.",
+        "The low cases assume two-hour systems remain the procurement default; the high cases assume a shift to four-hour duration as solar penetration pushes evening net load [S:bnef-2026]. Because capacity is measured in GW rather than GWh, a duration shift changes the headline number without changing the number of projects. Two forecasters state this explicitly [S:bnef-2026, S:irena-2026]; the others do not disclose a duration assumption, which makes their figures difficult to place against the rest [S:woodmac-2025, S:ember-2026].",
+        "Independence is weaker than the count suggests. Three of the five restate a single upstream capacity dataset [S:bnef-2026], so five published figures represent three independent estimates. This matters for anyone treating agreement between sources as confirmation."
+      ],
+      "charts": [
+        "estimate-spread"
+      ]
+    },
+    {
+      "heading": "What has bound deployment, and what binds it now",
+      "confidence": "contested",
+      "paragraphs": [
+        "Cell prices reached $58/kWh in 2025, against $151/kWh in 2021 [S:bnef-2026]. Every forecast published in 2023 placed 2026 prices above $80/kWh [S:woodmac-2025], so the cost path has run ahead of expectations rather than behind them.",
+        "The constraint has moved downstream. Median interconnection queue duration in the United States was 48 months for storage projects reaching commercial operation in 2025 [S:ferc-2026]; the comparable Indian figure was 29 months [S:cea-2026]. Whether this is the binding constraint or merely the most visible one is contested: queue reform in two US regions cut median wait by 14 months without a corresponding jump in commissioning [S:ferc-2026], which is consistent either with a second constraint binding or with a lag not yet elapsed. The evidence does not currently separate those two readings."
+      ],
+      "charts": [
+        "cost-curve"
+      ]
+    },
+    {
+      "heading": "What cannot be established",
+      "confidence": "thin",
+      "paragraphs": [
+        "Whether merchant storage economics work at 2030 penetration without capacity payments cannot be determined from public data. The question turns on hourly price spreads at high storage penetration, and the forward curves that would answer it are not published at the granularity required [S:cea-2026]. Published merchant return figures rest on proprietary dispatch models whose assumptions are not disclosed, so they can be reported but not checked."
+      ]
+    }
+  ],
+  "charts": [
+    {
+      "id": "installed-history",
+      "form": "timeseries",
+      "title": "Installed grid-scale storage has compounded at 44% since 2021",
+      "subtitle": "GW of installed capacity, year end",
+      "unit": "GW",
+      "x": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "x_label": "Year",
+      "cites": [
+        "iea-2026"
+      ],
+      "note": "Additions accelerated in 2025 rather than slowing.",
+      "series": [
+        {
+          "name": "World",
+          "values": [
+            42,
+            68,
+            97,
+            139,
+            182
+          ]
+        },
+        {
+          "name": "India",
+          "values": [
+            0.6,
+            1.4,
+            3.2,
+            6.1,
+            11.2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "regional-mix",
+      "form": "composition",
+      "title": "China accounts for roughly half of annual additions",
+      "subtitle": "Annual additions by region, GW",
+      "unit": "GW",
+      "x": [
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "x_label": "Year",
+      "cites": [
+        "iea-2026"
+      ],
+      "height": 3.0,
+      "series": [
+        {
+          "name": "China",
+          "values": [
+            11.4,
+            13.8,
+            20.6,
+            28.7
+          ]
+        },
+        {
+          "name": "United States",
+          "values": [
+            7.2,
+            7.9,
+            9.1,
+            12.8
+          ]
+        },
+        {
+          "name": "India",
+          "values": [
+            0.8,
+            1.8,
+            2.9,
+            5.1
+          ]
+        },
+        {
+          "name": "Rest of world",
+          "values": [
+            6.6,
+            5.5,
+            9.4,
+            14.4
+          ]
+        }
+      ]
+    },
+    {
+      "id": "estimate-spread",
+      "form": "estimate_range",
+      "title": "2030 forecasts span 2.5x, and three of five share one upstream dataset",
+      "subtitle": "Published 2030 global capacity forecasts, GW",
+      "unit": "GW",
+      "height": 3.1,
+      "cites": [
+        "iea-2026",
+        "bnef-2026",
+        "woodmac-2025",
+        "irena-2026",
+        "ember-2026"
+      ],
+      "note": "Grey markers restate another forecaster's dataset.",
+      "estimates": [
+        {
+          "author": "IEA",
+          "published": "2026-03",
+          "value": 420
+        },
+        {
+          "author": "Wood Mackenzie",
+          "published": "2025-11",
+          "value": 505,
+          "upstream": "BNEF"
+        },
+        {
+          "author": "Ember",
+          "published": "2026-02",
+          "value": 610,
+          "upstream": "BNEF"
+        },
+        {
+          "author": "IRENA",
+          "published": "2026-01",
+          "value": 880
+        },
+        {
+          "author": "BNEF",
+          "published": "2026-04",
+          "value": 1050
+        }
+      ]
+    },
+    {
+      "id": "cost-curve",
+      "form": "timeseries",
+      "title": "Cell prices fell below every 2023 forecast for 2026",
+      "subtitle": "Lithium-ion cell price, $/kWh",
+      "unit": "$/kWh",
+      "x": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "x_label": "Year",
+      "cites": [
+        "bnef-2026",
+        "woodmac-2025"
+      ],
+      "height": 3.0,
+      "series": [
+        {
+          "name": "Actual",
+          "values": [
+            151,
+            138,
+            112,
+            79,
+            58
+          ]
+        },
+        {
+          "name": "2023 forecast",
+          "values": [
+            151,
+            138,
+            112,
+            101,
+            92
+          ]
+        }
+      ]
+    }
+  ],
+  "estimates": [
+    {
+      "id": "est-iea",
+      "subject": "Global grid-scale storage capacity, 2030",
+      "author": "IEA",
+      "published": "2026-03",
+      "base_year": 2025,
+      "base_value": 182,
+      "target_year": 2030,
+      "target_value": 420,
+      "unit": "GW",
+      "method": "Policy-announced scenario",
+      "scope": "grid-scale only",
+      "geography": "global",
+      "source": "iea-2026"
+    },
+    {
+      "id": "est-bnef",
+      "subject": "Global grid-scale storage capacity, 2030",
+      "author": "BNEF",
+      "published": "2026-04",
+      "base_year": 2025,
+      "base_value": 182,
+      "target_year": 2030,
+      "target_value": 1050,
+      "unit": "GW",
+      "method": "Bottom-up project pipeline, 4h duration default",
+      "scope": "grid-scale only",
+      "geography": "global",
+      "source": "bnef-2026"
+    },
+    {
+      "id": "est-woodmac",
+      "subject": "Global grid-scale storage capacity, 2030",
+      "author": "Wood Mackenzie",
+      "published": "2025-11",
+      "base_year": 2024,
+      "base_value": 139,
+      "target_year": 2030,
+      "target_value": 505,
+      "unit": "GW",
+      "method": "Not disclosed",
+      "upstream": "BNEF",
+      "scope": "grid-scale only",
+      "geography": "global",
+      "source": "woodmac-2025"
+    },
+    {
+      "id": "est-irena",
+      "subject": "Global grid-scale storage capacity, 2030",
+      "author": "IRENA",
+      "published": "2026-01",
+      "base_year": 2025,
+      "base_value": 182,
+      "target_year": 2030,
+      "target_value": 880,
+      "unit": "GW",
+      "method": "1.5C-aligned requirement, 4h duration",
+      "scope": "grid-scale only",
+      "geography": "global",
+      "source": "irena-2026"
+    },
+    {
+      "id": "est-ember",
+      "subject": "Global grid-scale storage capacity, 2030",
+      "author": "Ember",
+      "published": "2026-02",
+      "base_year": 2025,
+      "base_value": 182,
+      "target_year": 2030,
+      "target_value": 610,
+      "unit": "GW",
+      "method": "Not disclosed",
+      "upstream": "BNEF",
+      "scope": "grid-scale only",
+      "geography": "global",
+      "source": "ember-2026"
+    },
+    {
+      "id": "est-woodmac-2023",
+      "subject": "Global grid-scale storage capacity, 2025",
+      "author": "Wood Mackenzie",
+      "published": "2023-06",
+      "base_year": 2022,
+      "base_value": 68,
+      "target_year": 2025,
+      "target_value": 121,
+      "unit": "GW",
+      "method": "Bottom-up pipeline, 2h duration default",
+      "scope": "grid-scale only",
+      "geography": "global",
+      "source": "woodmac-2025"
+    },
+    {
+      "id": "est-bnef-2023",
+      "subject": "Global grid-scale storage capacity, 2025",
+      "author": "BloombergNEF",
+      "published": "2023-07",
+      "base_year": 2022,
+      "base_value": 68,
+      "target_year": 2025,
+      "target_value": 168,
+      "unit": "GW",
+      "method": "Bottom-up project pipeline",
+      "scope": "grid-scale only",
+      "geography": "global",
+      "source": "bnef-2026"
+    }
+  ],
+  "outturns": [
+    {
+      "subject": "Global grid-scale storage capacity, 2025",
+      "year": 2025,
+      "value": 182,
+      "source": "iea-2026"
+    }
+  ],
+  "phases": {
+    "scope": {
+      "summary": "Restated question: do the published 2030 capacity forecasts disagree about demand, about cost, or about a measurement convention \u2014 and which reading does the evidence support?",
+      "sub_questions": [
+        "What is actually installed, and at what growth rate?",
+        "What is the full range of published 2030 forecasts?",
+        "Which single assumption accounts for most of the spread?",
+        "How independent are the published forecasts of each other?",
+        "Has the binding constraint on deployment changed?",
+        "How have prior forecasts scored against outturn?"
+      ],
+      "items": [
+        "Measured quantities: installed capacity, additions, cell prices, queue duration.",
+        "Estimated quantities: 2030 capacity, merchant returns, duration mix."
+      ]
+    },
+    "disagreement": {
+      "summary": "Two live disagreements identified, both reducible to a named quantity rather than to sentiment.",
+      "items": [
+        "Duration default: BNEF and IRENA assume four-hour systems become standard; the IEA assumes two-hour persists. Because capacity is reported in GW, this alone moves the 2030 figure by roughly 2x on an identical project count.",
+        "Binding constraint: FERC data show queue reform cutting wait times without a matching commissioning jump, which is consistent either with a second constraint or with an unelapsed lag. The published evidence does not separate these."
+      ]
+    },
+    "deep_dive": {
+      "summary": "Depth concentrated on the duration assumption and the queue evidence, which between them account for the whole forecast spread. Regional mix and cost history were covered at summary depth because they are not contested.",
+      "items": [
+        "Primary sources: IEA, CEA, FERC and BNEF publications read directly.",
+        "Prior-vintage forecasts scored where the horizon had elapsed.",
+        "Citation chains followed to find that three forecasts share one upstream dataset."
+      ]
+    },
+    "estimates": {
+      "summary": "Five published forecasts tabulated with provenance. Implied CAGRs recomputed from base and target; spread and independence reported. Not averaged."
+    },
+    "synthesis": {
+      "summary": "Answer stated first; confidence marked per section; four charts, each drawn from a series in this bundle with its data table beneath it."
+    }
+  },
+  "gaps": [
+    "Merchant storage returns at 2030 penetration \u2014 the hourly forward curves required are not published.",
+    "Duration mix is not disclosed by two of the five forecasters, so their figures cannot be placed against the others.",
+    "No 2030 outturn exists yet, so the forecast scorecard covers earlier vintages only."
+  ],
+  "sources": [
+    {
+      "key": "iea-2026",
+      "author": "International Energy Agency",
+      "title": "Energy Storage Tracking Report 2026",
+      "publisher": "IEA",
+      "date": "2026-03-18",
+      "kind": "official statistics",
+      "url": "https://example.org/iea-storage-2026",
+      "accessed": "2026-10-20"
+    },
+    {
+      "key": "bnef-2026",
+      "author": "BloombergNEF",
+      "title": "Global Energy Storage Outlook 2026",
+      "publisher": "BloombergNEF",
+      "date": "2026-04-02",
+      "kind": "commercial research",
+      "url": "https://example.org/bnef-storage-2026",
+      "accessed": "2026-10-20"
+    },
+    {
+      "key": "woodmac-2025",
+      "author": "Wood Mackenzie",
+      "title": "Energy Storage Market Outlook, Q4 2025",
+      "publisher": "Wood Mackenzie",
+      "date": "2025-11-12",
+      "kind": "commercial research",
+      "url": "https://example.org/woodmac-storage-2025",
+      "accessed": "2026-10-20"
+    },
+    {
+      "key": "irena-2026",
+      "author": "IRENA",
+      "title": "Storage Requirements for 1.5C Pathways",
+      "publisher": "IRENA",
+      "date": "2026-01-22",
+      "kind": "multilateral body",
+      "url": "https://example.org/irena-storage-2026",
+      "accessed": "2026-10-20"
+    },
+    {
+      "key": "ember-2026",
+      "author": "Ember",
+      "title": "Global Electricity Review 2026 \u2014 Storage Annex",
+      "publisher": "Ember",
+      "date": "2026-02-09",
+      "kind": "think tank",
+      "url": "https://example.org/ember-storage-2026",
+      "accessed": "2026-10-20"
+    },
+    {
+      "key": "ferc-2026",
+      "author": "Federal Energy Regulatory Commission",
+      "title": "Interconnection Queue Performance Report 2026",
+      "publisher": "FERC",
+      "date": "2026-05-30",
+      "kind": "regulator",
+      "url": "https://example.org/ferc-queues-2026",
+      "accessed": "2026-10-20"
+    },
+    {
+      "key": "cea-2026",
+      "author": "Central Electricity Authority",
+      "title": "Monthly Storage Capacity Report, September 2026",
+      "publisher": "CEA",
+      "date": "2026-09-30",
+      "kind": "regulator",
+      "url": "https://example.org/cea-storage-2026",
+      "accessed": "2026-10-20"
+    }
+  ]
+}

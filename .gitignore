@@ -1,7 +1,10 @@
-# Build output — workbooks are generated from the specs, not committed
+# Build output — workbooks and reports are generated from specs, not committed
 *.xlsx
+*.pdf
 !examples/*.xlsx
+!examples/*.pdf
 *.xlsm
+charts/
 
 # Python
 __pycache__/

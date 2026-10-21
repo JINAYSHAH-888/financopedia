@@ -33,8 +33,15 @@ infer, state the inference in one line at the start of the run, and proceed.
 | "review the Q3 call", transcript attached | E (R only if no prior context on file) |
 | "full workup", "everything on X", vague/ambitious | R → M(`dcf`) → M(`statements`) → E |
 | "update X" and a `notes/<TICKER>.md` exists | read notes → R (delta only) → E |
+| **A topic rather than a company** — "is private credit overheating", "India's EV supply chain", "the economics of grid storage", any question with no ticker to resolve | **T** |
+| A topic *and* a company in it | T → R → M |
 
-R = Research · M = Model (four types) · E = Earnings review.
+R = Research (one company) · T = Thematic deep research (a topic) · M = Model
+(four types) · E = Earnings review.
+
+**R or T?** If the subject resolves to a listed entity with filings, it is R.
+If it is a market, a sector, a mechanism, a policy or a question, it is T.
+When both apply, run T first — the topic frames which company facts matter.
 When in genuine doubt, run more rather than fewer — the pipeline is
 automated, extra modules cost time not attention.
 
@@ -56,6 +63,7 @@ pulls the research toward the model's shape.
 | Module | Protocol | Produces |
 |---|---|---|
 | Research | `references/research-protocol.md` | `research-<TICKER>.md` |
+| Thematic | `references/thematic-protocol.md` | `research-<slug>.pdf` — five phases, numbered citations, charts |
 | Model | `references/model-protocol.md` | `<TICKER>-<type>.xlsx` + assumption memo |
 | Earnings | `references/earnings-protocol.md` | `earnings-<TICKER>-<Q>.md` |
 
@@ -117,6 +125,8 @@ on closing balances, a missing net-debt deduction — and caught all of them.
 
 ### Gate 2 — citation integrity (automated)
 
+For a Module R markdown report:
+
 ```bash
 python3 scripts/audit_report.py research-<TICKER>.md
 ```
@@ -124,6 +134,20 @@ python3 scripts/audit_report.py research-<TICKER>.md
 Flags any sentence containing a figure that lacks an adjacent source and
 date, any unlabelled estimate, and any recommendation language
 ("we like", "attractive", "should buy", "undervalued", a target price).
+
+For a Module T research report:
+
+```bash
+python3 scripts/audit_research.py bundle.json --pdf research-<slug>.pdf
+```
+
+Seventeen checks covering what a research report can get wrong: every
+numbered citation resolves to a real source and every source is cited, every
+figure in prose sits in a cited sentence, every published estimate carries
+full provenance with its spread and independence disclosed, every chart's
+data is in the bundle, the five phases ran with their gates met, confidence
+is marked per finding, and nothing recommends an action.
+
 Fix every hit. Re-run until clean.
 
 ### Gate 3 — adversarial read (fresh agent)

@@ -1,8 +1,8 @@
 name: audit
 
-# The models are only worth anything if the gates still fire, so CI runs the
-# real audit: it recalculates every workbook through LibreOffice and compares
-# it against the independent Python engines.
+# The output is only worth anything if the gates still fire, so CI runs the
+# real thing: it recalculates every workbook through LibreOffice, rebuilds the
+# research PDF, and compares both against the independent Python engines.
 on:
   push:
   pull_request:
@@ -26,8 +26,11 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: Build and audit every model type
+      - name: Build and audit every deliverable
         run: bash tests/run_all.sh
 
-      - name: Confirm the gates still catch deliberate errors
+      - name: Confirm the model gates still catch deliberate errors
         run: python3 tests/test_sabotage.py
+
+      - name: Confirm the research gates still catch deliberate errors
+        run: python3 tests/test_research_sabotage.py
